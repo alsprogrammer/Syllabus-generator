@@ -2,13 +2,13 @@
 
 ## What is this repository for? ###
 
-This program allows to form syllabus according to modern Russian education ministry requirments based on docs template.
+This program allows to form a course syllabus according to modern Russian education ministry requirments based on a docx template.
 
 ## How do I get set up? ##
 
-To use the application you may just start program.
+To use the application you may just start the program.
 There is no config files.
-The program requires docstpl library installed.
+The program requires docxtpl library installed.
 To run the program just put it in some folder, and run 
 
     python syllabus_build.py <template_file_name> <course_description_file> <output_file_name>
