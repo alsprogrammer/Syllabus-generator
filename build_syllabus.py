@@ -1,7 +1,12 @@
 from docxtpl import DocxTemplate
+from docx.oxml.shared import qn
+import docx
 import sys
 import os.path
 import json
+import glob
+
+bookmark_name_starts_with = "lab_work_place"
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
@@ -34,11 +39,5 @@ if __name__ == '__main__':
         sys.exit(1)
 
     doc = DocxTemplate(templ_file_name)
-    #for i in range(len(course_description["course_content"])):
-    #    print("Модуль {}".format(i))
-    #    print("Раздел {}".format(course_description["course_content"][i]["module_name"]))
-    #    for j in range(len(course_description["course_content"][i]["module_parts"])):
-    #        print(course_description["course_content"][i]["module_parts"][j]["module_part_content"])
-
     doc.render(course_description)
     doc.save(out_file_name)

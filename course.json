@@ -47,6 +47,25 @@
     }
   ],
 
+  "references" : {
+    "main" : [
+      "Саяпин, А. В. Дискретная математика [Электронный ресурс] : учеб. пособие / А. В. Саяпин, Т. А. Сливина, К. В. Сафонов. - Электрон. текстовые дан. - Красноярск : СибГАУ, 2014.",
+      "Балюкевич, Э. Л. Дискретная математика [Электронный ресурс] / Э. Л. Балюкевич, Л. Ф. Ковалева, А. Н. Романников. - Москва : Евразийский открытый институт, 2012. - 173 с."
+    ],
+    "additional" : [
+      "Саяпин, А. В. Методические указания к выполнению лабораторных работ по курсу 'Дискретная математика' в среде miniGAP и JFLAP для специальностей [Electronic resource] : базы и банки данных / А. В. Саяпин. - Электрон. дан. - Красноярск : СибГАУ, 2009.",
+      "Новиков, Ф. А. Дискретная математика для программистов [Текст] : учеб. пособие / Ф. А. Новиков. - 3-е изд. - Санкт-Петербург : Питер, 2008. – 1 экз.",
+      "Саяпин, А. В. Дискретная математика [Text] : учеб. пособие / А. В. Саяпин, Т. А. Сливина. - Красноярск : СибГАУ, 2010 Саяпин, А. В. – 60 экз."
+    ],
+    "internet" : [
+      "Alex Teacher’s Site [Электронный ресурс]: // URL: http://alstutor.work/",
+      "Дискретная математика – Студопедия [Электронный ресурс// URL:  http://studopedia.ru/view_mathematica.php?id=32",
+      "Дискретная математика [Электронный ресурс]: //  http://nado.znate.ru/Дискретная_математика"
+    ]
+  },
+
+  "it_means" : "JFLAP, MiniGAP, SWI-Prolog",
+
   "course_content" : [
     {
       "module_name" : "Основы теории множеств",
@@ -59,6 +78,11 @@
           "module_part_lab" : 4,
           "module_part_selftraining" : 2,
           "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
           "lab_works" : [
             {
               "name" : "Основы теории множеств",
@@ -66,6 +90,14 @@
               "zf" : 0,
               "ozf" : 0
             }
+          ],
+          "practice_works" : [
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
           ]
         },
         {
@@ -76,6 +108,11 @@
           "module_part_lab" : 4,
           "module_part_selftraining" : 2,
           "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
           "lab_works" : [
             {
               "name" : "Теория множеств в приложениях",
@@ -83,6 +120,14 @@
               "zf" : 0,
               "ozf" : 0
             }
+          ],
+          "practice_works" : [
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
           ]
         }
       ]
@@ -98,6 +143,14 @@
           "module_part_lab" : 4,
           "module_part_selftraining" : 2,
           "module_part_competencies" : "ОПК-2",
+          "references_list" : [
+            1, 2, 4, 5, 6
+          ],
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
           "lab_works" : [
             {
               "name" : "Свойства отношений",
@@ -111,6 +164,14 @@
               "zf" : 0,
               "ozf" : 0
             }
+          ],
+          "practice_works" : [
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
           ]
         },
         {
@@ -121,6 +182,11 @@
           "module_part_lab" : 4,
           "module_part_selftraining" : 2,
           "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
           "lab_works" : [
             {
               "name" : "Свойства функций",
@@ -128,6 +194,14 @@
               "zf" : 0,
               "ozf" : 0
             }
+          ],
+          "practice_works" : [
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
           ]
         },
         {
@@ -138,6 +212,11 @@
           "module_part_lab" : 4,
           "module_part_selftraining" : 2,
           "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
           "lab_works" : [
             {
               "name" : "Свойства операций",
@@ -145,6 +224,14 @@
               "zf" : 0,
               "ozf" : 0
             }
+          ],
+          "practice_works" : [
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
           ]
         }
       ]
