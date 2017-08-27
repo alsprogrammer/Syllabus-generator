@@ -85,11 +85,11 @@ if __name__ == '__main__':
     lessons_per_module = math.floor(course_description["lecture_hours"] / whole_parts_num)
     seminars_per_module = math.floor(course_description["seminar_hours"] / whole_parts_num)
     labs_per_module = math.floor(course_description["lab_hours"] / whole_parts_num)
-    pracs_per_module = math.floor(course_description["practice_hours"] / whole_pracs_num)
+    pracs_per_module = math.floor(course_description["practice_hours"] / whole_parts_num)
     selftraining_per_module = math.floor(course_description["selftraining_hours"] / whole_parts_num)
 
-    labs_per_part = math.floor(course_description["lab_hours"] / whole_labs_num)
-    pracs_per_part = math.floor(course_description["practice_hours"] / whole_pracs_num)
+    labs_per_part = math.floor(course_description["lab_hours"] / whole_labs_num) if whole_labs_num != 0 else 0
+    pracs_per_part = math.floor(course_description["practice_hours"] / whole_pracs_num) if whole_pracs_num != 0 else 0
 
     for course_module in course_description["course_content"]:
         for module_part in course_module["module_parts"]:
@@ -109,13 +109,15 @@ if __name__ == '__main__':
         for module_part in course_module["module_parts"]:
             for lab in module_part["lab_works"]:
                 lab.update({study_form[course_description["study_form"]]: labs_per_part})
-    course_description["course_content"][-1]["module_parts"][-1]["lab_works"][-1].update({study_form[course_description["study_form"]]: labs_per_part + course_description["lab_hours"] - labs_per_part * whole_labs_num})
+    if whole_labs_num != 0:
+        course_description["course_content"][-1]["module_parts"][-1]["lab_works"][-1].update({study_form[course_description["study_form"]]: labs_per_part + course_description["lab_hours"] - labs_per_part * whole_labs_num})
 
     for course_module in course_description["course_content"]:
         for module_part in course_module["module_parts"]:
             for lab in module_part["practice_works"]:
                 lab.update({study_form[course_description["study_form"]]: pracs_per_part})
-    course_description["course_content"][-1]["module_parts"][-1]["practice_works"][-1].update({study_form[course_description["study_form"]]: pracs_per_part + course_description["practice_works"] - pracs_per_part * whole_pracs_num})
+    if whole_pracs_num != 0:
+        course_description["course_content"][-1]["module_parts"][-1]["practice_works"][-1].update({study_form[course_description["study_form"]]: pracs_per_part + course_description["practice_works"] - pracs_per_part * whole_pracs_num})
 
     doc = DocxTemplate(templ_file_name)
     doc.render(course_description)
