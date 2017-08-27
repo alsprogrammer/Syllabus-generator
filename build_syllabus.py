@@ -1,11 +1,13 @@
 from docxtpl import DocxTemplate
+import math
 import sys
 import os.path
 import json
 from xml.sax.saxutils import escape
 
-
 bookmark_name_starts_with = "lab_work_place"
+
+study_form = {"очная": "of", "заочная": "zf", "очно-заочная": "ozf"}
 
 if __name__ == '__main__':
     if len(sys.argv) != 6:
@@ -74,6 +76,46 @@ if __name__ == '__main__':
 
     course_description.update({"test": test})
     course_description.update({"control_questions": control_questions})
+
+    whole_parts_num = sum(map(lambda x: len(x["module_parts"]), course_description["course_content"]))
+
+    whole_labs_num = sum(map(lambda x: sum(map(lambda y: len(y["lab_works"]), x["module_parts"])), course_description["course_content"]))
+    whole_pracs_num = sum(map(lambda x: sum(map(lambda y: len(y["practice_works"]), x["module_parts"])), course_description["course_content"]))
+
+    lessons_per_module = math.floor(course_description["lecture_hours"] / whole_parts_num)
+    seminars_per_module = math.floor(course_description["seminar_hours"] / whole_parts_num)
+    labs_per_module = math.floor(course_description["lab_hours"] / whole_parts_num)
+    pracs_per_module = math.floor(course_description["practice_hours"] / whole_pracs_num)
+    selftraining_per_module = math.floor(course_description["selftraining_hours"] / whole_parts_num)
+
+    labs_per_part = math.floor(course_description["lab_hours"] / whole_labs_num)
+    pracs_per_part = math.floor(course_description["practice_hours"] / whole_pracs_num)
+
+    for course_module in course_description["course_content"]:
+        for module_part in course_module["module_parts"]:
+            module_part.update({"module_part_lessons": lessons_per_module})
+            module_part.update({"module_part_seminars": seminars_per_module})
+            module_part.update({"module_part_lab": labs_per_module})
+            module_part.update({"module_part_selftraining": selftraining_per_module})
+            module_part["selftraining_hours_f"].update({[study_form[course_description["study_form"]]][0]: selftraining_per_module})
+
+    course_description["course_content"][-1]["module_parts"][-1].update({"module_part_lessons": course_description["lecture_hours"] - lessons_per_module * whole_parts_num + lessons_per_module})
+    course_description["course_content"][-1]["module_parts"][-1].update({"module_part_seminars": course_description["seminar_hours"] - seminars_per_module * whole_parts_num + seminars_per_module})
+    course_description["course_content"][-1]["module_parts"][-1].update({"module_part_lab": course_description["lab_hours"] - labs_per_module * whole_parts_num + labs_per_module})
+    course_description["course_content"][-1]["module_parts"][-1].update({"module_part_selftraining": course_description["selftraining_hours"] - selftraining_per_module * whole_parts_num + selftraining_per_module})
+    course_description["course_content"][-1]["module_parts"][-1]["selftraining_hours_f"].update({[study_form[course_description["study_form"]]][0]: course_description["selftraining_hours"] - selftraining_per_module * whole_parts_num + selftraining_per_module})
+
+    for course_module in course_description["course_content"]:
+        for module_part in course_module["module_parts"]:
+            for lab in module_part["lab_works"]:
+                lab.update({study_form[course_description["study_form"]]: labs_per_part})
+    course_description["course_content"][-1]["module_parts"][-1]["lab_works"][-1].update({study_form[course_description["study_form"]]: labs_per_part + course_description["lab_hours"] - labs_per_part * whole_labs_num})
+
+    for course_module in course_description["course_content"]:
+        for module_part in course_module["module_parts"]:
+            for lab in module_part["practice_works"]:
+                lab.update({study_form[course_description["study_form"]]: pracs_per_part})
+    course_description["course_content"][-1]["module_parts"][-1]["practice_works"][-1].update({study_form[course_description["study_form"]]: pracs_per_part + course_description["practice_works"] - pracs_per_part * whole_pracs_num})
 
     doc = DocxTemplate(templ_file_name)
     doc.render(course_description)
