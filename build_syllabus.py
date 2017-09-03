@@ -78,8 +78,8 @@ if __name__ == '__main__':
     course_description["col_labels"] = course_description["col_labels"] + course_description["feature"]["col_labels"]
     course_description.update({"features": []})
     for cur_feature in course_description["feature"]["elements"]:
-        units_sum = sum(list(map(lambda x: 0 if isinstance(x, str) else x, cur_feature["units"])))
-        hours_sum = sum(list(map(lambda x: 0 if isinstance(x, str) else 0,cur_feature["hours"])))
+        units_sum = sum(cur_feature["units"])
+        hours_sum = sum(cur_feature["hours"])
         cols = ["{0}({1})".format(units_sum, hours_sum) if units_sum !=0 else " "]
         for i in range(len(cur_feature["units"])):
             cols.append("{0}({1})".format(cur_feature["units"][i], cur_feature["hours"][i]) if cur_feature["units"][i] != 0 else "")
