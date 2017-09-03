@@ -74,6 +74,18 @@ if __name__ == '__main__':
         else:
             control_questions.append(escape(cur_str).replace("\n", ""))
 
+    course_description.update({"col_labels": ["Всего, зачетных единиц (акад.часов)"]})
+    course_description["col_labels"] = course_description["col_labels"] + course_description["feature"]["col_labels"]
+    course_description.update({"features": []})
+    for cur_feature in course_description["feature"]["elements"]:
+        units_sum = sum(list(map(lambda x: 0 if isinstance(x, str) else x, cur_feature["units"])))
+        hours_sum = sum(list(map(lambda x: 0 if isinstance(x, str) else 0,cur_feature["hours"])))
+        cols = ["{0}({1})".format(units_sum, hours_sum) if units_sum !=0 else " "]
+        for i in range(len(cur_feature["units"])):
+            cols.append("{0}({1})".format(cur_feature["units"][i], cur_feature["hours"][i]) if cur_feature["units"][i] != 0 else "")
+        course_description["features"].append({"label": cur_feature["name"], "cols": cols})
+    course_description["features"].append({"label": "Вид промежуточной аттестации (зачет, экзамен)", "cols": [course_description["control_type"]] + course_description["feature"]["control_type"]})
+
     course_description.update({"test": test})
     course_description.update({"control_questions": control_questions})
 
