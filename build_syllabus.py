@@ -66,6 +66,11 @@ if __name__ == '__main__':
             else:
                 task_text = escape(cur_str[0:cur_str.rindex("<<")]).replace("\n", "")
 
+    for element in course_description["feature"]["elements"]:
+        if "label" in element.keys():
+            course_description[element["label"]+"_units"] = sum(element["units"])
+            course_description[element["label"]+"_hours"] = sum(element["hours"])
+
     control_questions = []
     question_file = open(question_file_name, encoding="utf-8")
     for cur_str in question_file:
