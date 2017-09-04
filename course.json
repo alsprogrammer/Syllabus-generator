@@ -10,11 +10,11 @@
 
   "credit_units" : 6,
   "credit_hours" : 216,
-  "lecture_hours" : 18,
-  "seminar_hours" : 0,
-  "practice_hours" : 0,
-  "lab_hours" : 36,
-  "selftraining_hours" : 72,
+  "lecture_hours" : 36,
+  "seminar_hours" : 72,
+  "practice_hours" : 72,
+  "lab_hours" : 0,
+  "selftraining_hours" : 108,
   "control_type" : "Экзамен",
 
   "feature" : {
@@ -181,14 +181,14 @@
             "ozf" : 0
           },
           "lab_works" : [
+          ],
+          "practice_works" : [
             {
               "name" : "Основы теории множеств",
               "of" : 4,
               "zf" : 0,
               "ozf" : 0
             }
-          ],
-          "practice_works" : [
           ],
           "seminar_works" : [
           ],
@@ -211,14 +211,14 @@
             "ozf" : 0
           },
           "lab_works" : [
+          ],
+          "practice_works" : [
             {
               "name" : "Теория множеств в приложениях",
               "of" : 6,
               "zf" : 0,
               "ozf" : 0
             }
-          ],
-          "practice_works" : [
           ],
           "seminar_works" : [
           ],
@@ -249,6 +249,8 @@
             "ozf" : 0
           },
           "lab_works" : [
+          ],
+          "practice_works" : [
             {
               "name" : "Свойства отношений",
               "of" : 6,
@@ -261,8 +263,6 @@
               "zf" : 0,
               "ozf" : 0
             }
-          ],
-          "practice_works" : [
           ],
           "seminar_works" : [
           ],
@@ -285,20 +285,14 @@
             "ozf" : 0
           },
           "lab_works" : [
+          ],
+          "practice_works" : [
             {
               "name" : "Свойства функций",
               "of" : 6,
               "zf" : 0,
               "ozf" : 0
-            },
-            {
-              "name" : "Свойства функций1",
-              "of" : 6,
-              "zf" : 0,
-              "ozf" : 0
             }
-          ],
-          "practice_works" : [
           ],
           "seminar_works" : [
           ],
@@ -321,6 +315,8 @@
             "ozf" : 0
           },
           "lab_works" : [
+          ],
+          "practice_works" : [
             {
               "name" : "Свойства операций",
               "of" : 6,
@@ -328,7 +324,266 @@
               "ozf" : 0
             }
           ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
+          ]
+        }
+      ]
+    },
+    {
+      "module_name" : "Теория графов",
+      "module_parts" : [
+        {
+          "module_part_content" : ". Основные понятия и определения теории графов.",
+          "module_part_full_content" : "Понятие графа. Области применения теории графов. Основные термины и определения. Классификация графов. Способы задания графов: аналитический, графический, матричный. Матрицы смежности и инцидентности. Свойства матриц смежности и инцидентности. Связность. Сильная, слабая связность. Компоненты связности. Матрица связности.",
+          "module_part_lessons" : 2,
+          "module_part_seminars" : 0,
+          "module_part_lab" : 4,
+          "module_part_selftraining" : 2,
+          "module_part_competencies" : "ОПК-2",
+          "references_list" : [
+            1, 2, 4, 5, 6
+          ],
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
+          "lab_works" : [
+          ],
           "practice_works" : [
+            {
+              "name" : "Основные понятия теории графов",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            }
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
+          ]
+        },
+        {
+          "module_part_content" : "Маршруты и пути в графе",
+          "module_part_full_content" : "Понятие маршрута. Цепь, простая цепь. Поиск маршрута в графе (алгоритм Тери). Поиск кратчайшего маршрута в графе (алгоритм “Фронт волны”). Нагруженный граф. Минимальный путь. Свойства минимальных путей. Поиск минимального пути в нагруженном орграфе (графе). Алгоритм Форда-Беллмана.",
+          "module_part_lessons" : 3,
+          "module_part_seminars" : 0,
+          "module_part_lab" : 6,
+          "module_part_selftraining" : 3,
+          "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 3,
+            "zf" : 0,
+            "ozf" : 0
+          },
+          "lab_works" : [
+          ],
+          "practice_works" : [
+            {
+              "name" : "Кратчайший путь в неориентированном графе",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            },
+            {
+              "name" : "Кратчайший путь в ориентированном графе",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            }
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
+          ]
+        },
+        {
+          "module_part_content" : "Транспортные сети",
+          "module_part_full_content" : "Основные понятия. Пропускная способность, Поток. Алгоритм построения полного потока транспортной сети. Орграф приращений. Максимальный поток транспортной сети.",
+          "module_part_lessons" : 3,
+          "module_part_seminars" : 0,
+          "module_part_lab" : 6,
+          "module_part_selftraining" : 2,
+          "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
+          "lab_works" : [
+          ],
+          "practice_works" : [
+            {
+              "name" : "Поток транспортной сети",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            }
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
+          ]
+        }
+		]
+	},
+    {
+      "module_name" : "Математическая логика",
+      "module_parts" : [
+        {
+          "module_part_content" : "Алгебра логики",
+          "module_part_full_content" : "Высказывание. Классификация высказываний. Основные законы логики. Операции над высказываниями. Формулы алгебры логики. Интерпретация ФАЛ. Классификация ФАЛ. Равносильные формулы. Булева алгебра. Функция булевой алгебры. Нормальные формы.",
+          "module_part_lessons" : 2,
+          "module_part_seminars" : 0,
+          "module_part_lab" : 4,
+          "module_part_selftraining" : 2,
+          "module_part_competencies" : "ОПК-2",
+          "references_list" : [
+            1, 2, 4, 5, 6
+          ],
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
+          "lab_works" : [
+          ],
+          "practice_works" : [
+            {
+              "name" : "Операции алгебры логики",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            }
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
+          ]
+        },
+        {
+          "module_part_content" : "Логический вывод",
+          "module_part_full_content" : "Логический вывод. Силлогизм. Основная теорема логического вывода. Проверка доказательности рассуждений на основе логического следования формул.",
+          "module_part_lessons" : 3,
+          "module_part_seminars" : 0,
+          "module_part_lab" : 6,
+          "module_part_selftraining" : 3,
+          "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 3,
+            "zf" : 0,
+            "ozf" : 0
+          },
+          "lab_works" : [
+          ],
+          "practice_works" : [
+            {
+              "name" : "Проверка правильности логического вывода",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            }
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
+          ]
+        },
+        {
+          "module_part_content" : "Алгебра предикатов",
+          "module_part_full_content" : "Логика предикатов. Предикат. Представление объектов в логике предикатов первого порядка. Атом, константа, переменная, терм, предикатный символ, предикат. Операции логики предикатов. Квантор. Интерпретация формул логики предикатов. Предваренная нормальная форма. Основные равносильности логики предикатов. Метод проверки правильности вывода. Дизъюнкт. Резольвента. Метод резолюций в логике предикатов. Скулемовская стандартная форма. Алгоритм унификации.",
+          "module_part_lessons" : 3,
+          "module_part_seminars" : 0,
+          "module_part_lab" : 6,
+          "module_part_selftraining" : 2,
+          "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
+          "lab_works" : [
+          ],
+          "practice_works" : [
+            {
+              "name" : "Построение высказываний в логике предикатов",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            },
+            {
+              "name" : "Скулемовские нормальные формы",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            },
+            {
+              "name" : "Проыерка правильности расуждений при помощи логики предикатов",
+              "of" : 8,
+              "zf" : 0,
+              "ozf" : 0
+            }
+          ],
+          "seminar_works" : [
+          ],
+          "current_control" : [
+            "Задания для лабораторных работ",
+            "Тестирование"
+          ]
+        }
+      ]
+    },
+    {
+      "module_name" : "Формальные языки, грамматики и автоматы",
+      "module_parts" : [
+        {
+          "module_part_content" : "Язык, строка, алфавит. Основные понятия.",
+          "module_part_full_content" : "Формальная грамматика. Вывод (цепочка вывода). Вывод, непосредственный вывод, отношение выводимости, язык, порождаемый грамматикой. Классификация грамматик.",
+          "module_part_lessons" : 2,
+          "module_part_seminars" : 0,
+          "module_part_lab" : 4,
+          "module_part_selftraining" : 2,
+          "module_part_competencies" : "ОПК-2",
+          "selftraining_hours_f" : {
+            "of" : 2,
+            "zf" : 0,
+            "ozf" : 0
+          },
+          "lab_works" : [
+          ],
+          "practice_works" : [
+            {
+              "name" : "Классификация грамматик",
+              "of" : 4,
+              "zf" : 0,
+              "ozf" : 0
+            },
+            {
+              "name" : "Конструирование формальной грамматики",
+              "of" : 4,
+              "zf" : 0,
+              "ozf" : 0
+            },
+            {
+              "name" : "Конструирование формальной грамматики для реальной задачи",
+              "of" : 4,
+              "zf" : 0,
+              "ozf" : 0
+            }
           ],
           "seminar_works" : [
           ],

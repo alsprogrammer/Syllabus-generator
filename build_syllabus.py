@@ -129,7 +129,7 @@ if __name__ == '__main__':
             for lab in module_part["practice_works"]:
                 lab.update({study_form[course_description["study_form"]]: pracs_per_part})
     if whole_pracs_num != 0:
-        course_description["course_content"][-1]["module_parts"][-1]["practice_works"][-1].update({study_form[course_description["study_form"]]: pracs_per_part + course_description["practice_works"] - pracs_per_part * whole_pracs_num})
+        course_description["course_content"][-1]["module_parts"][-1]["practice_works"][-1].update({study_form[course_description["study_form"]]: pracs_per_part + course_description["practice_hours"] - pracs_per_part * whole_pracs_num})
 
     doc = DocxTemplate(templ_file_name)
     doc.render(course_description)
